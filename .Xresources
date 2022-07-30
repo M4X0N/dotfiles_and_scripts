@@ -1,0 +1,126 @@
+! -----------------------------------------------------------------------------
+! Author: m4x0n
+! -----------------------------------------------------------------------------
+
+!	FONTS:
+#define font_main monospace:size=14
+#define font_big monospace:size=18
+
+!	COLORSCHEME: GRUVBOX
+#define color_bg0	#282828
+#define color_bg1	#3c3836
+#define color_bg2	#504945
+#define color_bg3	#665c54
+#define color_bg4	#7c6f64
+#define color_fg0	#fbf1c7
+#define color_fg1	#ebdbb2
+#define color_fg2	#d5c4a1
+#define color_fg3	#bdae93
+#define color_fg4	#a89984
+
+! Pale
+#define color_red	#cc241d
+#define color_green	#98971a
+#define color_yellow	#d79921
+#define color_blue	#458588
+#define color_purple	#b16286
+#define color_aqua	#689d6a
+
+! Bright
+#define color_bred	#fb4934
+#define color_bgreen	#b8bb26
+#define color_byellow 	#fabd2f
+#define color_bblue	#83a598
+#define color_bpurple	#d3869b
+#define color_baqua	#8ec07c
+
+!	EZ-COLORSCHEME
+#define c_fg		color_fg0
+#define c_bg		color_bg0
+#define c_acc		color_yellow
+#define	c_acb		color_byellow
+
+! dwm parameters
+*dwm.font:		font_main
+*dwm.dmenufont:		font_main
+!*dwm.normbgcolor:	color_bg0
+!*dwm.normbordercolor:	color_bg4
+!*dwm.normfgcolor:	color_fg0
+!*dwm.selbgcolor:	color_bg0
+!*dwm.selbordercolor:	color_yellow
+!*dwm.selfgcolor:	color_byellow
+*dwm.normbgcolor:	c_bg
+*dwm.normbordercolor:	c_fg
+*dwm.normfgcolor:	c_fg
+*dwm.selbgcolor:	c_bg
+*dwm.selbordercolor:	c_acc
+*dwm.selfgcolor:	c_acb
+!*dwm.borderpx:		1
+!*dwm.snap:		
+!*dwm.showbar:
+!*dwm.topbar:
+!*dwm.nmaster:
+!*dwm.resizehints:
+!*dwm.mfact:
+
+! st/terminal parameters
+*st.font:	font_main
+! hard contrast: *background: #1d2021
+*st.background:	color_bg0
+! soft contrast: st.background:	color_32302f
+*st.foreground:	color_fg1
+! Black + DarkGrey
+*st.color0:	color_bg0
+*st.color8:	color_bg1
+! DarkRed + Red
+*st.color1:	color_bred
+*st.color9:	color_red
+! DarkGreen + Green
+*st.color2:	color_bgreen
+*st.color10:	color_green
+! DarkYellow + Yellow
+*st.color3:	color_byellow
+*st.color11:	color_yellow
+! DarkBlue + Blue
+*st.color4:	color_bblue
+*st.color12:	color_blue
+! DarkMagenta + Magenta
+*st.color5:	color_bpurple
+*st.color13:	color_purple
+! DarkCyan + Cyan
+*st.color6:	color_baqua
+*st.color14:	color_aqua
+! LightGrey + White
+*st.color7:	color_fg4
+*st.color15:	color_fg1
+*st.cursorColor:	color_fg0
+*st.termname:	st
+*st.shell:	zsh
+!st.minlatency:	
+!st.maxlatency:	
+!st.blinktimeout:       
+!st.bellvolume:	
+*st.tabspaces:	4
+*st.borderpx:	2
+!st.cwscale:	
+!st.chscale:	
+
+! dmenu parameters
+*dmenu.font:		font_main
+*dmenu.foreground:	c_fg
+*dmenu.background:	c_bg
+*dmenu.selforeground:	c_acb
+*dmenu.selbackground:	c_bg
+
+! That how it was:
+!static const unsigned int borderpx  = 1;        /* border pixel of windows */
+!static const unsigned int snap      = 32;       /* snap pixel */
+!static const int showbar            = 1;        /* 0 means no bar */
+!static const int topbar             = 1;        /* 0 means bottom bar */
+!static const char buttonbar[]       = "[menu]";
+!static const char *fonts[]          = { "monospace:size=14" };
+!static const char dmenufont[]		= "monospace:size=14";
+
+!static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+!static const int nmaster     = 1;    /* number of clients in master area */
+!static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
