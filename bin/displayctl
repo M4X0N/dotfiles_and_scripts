@@ -1,0 +1,24 @@
+#! /bin/bash
+
+function notify_brightness
+{
+	value=$(brightnessctl | grep -o '[0-9]*\%' | grep -o '[0-9]*')
+	dunstify -u low -t 1500 -r 1001 Brightness $value -h int:value:$value
+}
+
+while getopts 'ud' OPTION; do
+  case "$OPTION" in
+    u)
+      brightnessctl set +5%
+      notify_brightness
+      ;;
+    d)
+      brightnessctl set 5%-
+      notify_brightness
+      ;;
+    ?)
+      exit 1
+      ;;
+  esac
+done
+shift "$(($OPTIND -1))"
