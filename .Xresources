@@ -3,8 +3,10 @@
 ! -----------------------------------------------------------------------------
 
 !	FONTS:
-#define font_main monospace:size=14
-#define font_big monospace:size=18
+!#define font_main 	iosevka:size=12
+!#define font_big 	iosevka:size=16
+#define font_main 	monospace:size=12
+#define font_big 	monospace:size=14
 
 !	COLORSCHEME: GRUVBOX
 #define color_bg0	#282828
@@ -39,6 +41,8 @@
 #define c_bg		color_bg0
 #define c_acc		color_yellow
 #define	c_acb		color_byellow
+#define	c_border	color_bg1
+#define	c_bordersel	color_fg4
 
 ! dwm parameters
 *dwm.font:		font_main
@@ -49,16 +53,16 @@
 !*dwm.selbgcolor:	color_bg0
 !*dwm.selbordercolor:	color_yellow
 !*dwm.selfgcolor:	color_byellow
-*dwm.normbgcolor:	c_bg
-*dwm.normbordercolor:	c_fg
-*dwm.normfgcolor:	c_fg
+*dwm.normbgcolor:       c_bg
+*dwm.normbordercolor:	c_border
+*dwm.normfgcolor:       c_fg
 *dwm.selbgcolor:	c_bg
-*dwm.selbordercolor:	c_acc
+*dwm.selbordercolor:	c_bordersel
 *dwm.selfgcolor:	c_acb
-!*dwm.borderpx:		1
+*dwm.borderpx:		1
+*dwm.topbar:		1
 !*dwm.snap:		
 !*dwm.showbar:
-!*dwm.topbar:
 !*dwm.nmaster:
 !*dwm.resizehints:
 !*dwm.mfact:
