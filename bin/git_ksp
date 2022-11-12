@@ -1,0 +1,3 @@
+#! /bin/bash
+
+st -e ranger $HOME/git/m4x0n/ksp-kos --cmd=terminal

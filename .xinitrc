@@ -20,7 +20,7 @@ rm ~/.cache/dmenu_run
 
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
-#/usr/bin/pw-jack &
+# /usr/bin/pw-jack &
 /usr/bin/wireplumber &
 
 ~/.fehbg &

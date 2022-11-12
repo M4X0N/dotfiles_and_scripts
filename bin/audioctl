@@ -5,59 +5,25 @@ function notify_volume
 	# $1 - ID
 	value=$(wpctl get-volume $1 | grep -o '[0-9].[0-9][0-9]' | sed 's/\.//')
 	echo $value
-	value_disp=$((value*2/3))
+	value_disp=$value
 	echo $value_disp
 	dunstify -u low -t 1500 -r 1011 Volume: $value -h int:value:$value_disp
 }
 
-IFS=$'\n'
-wpstatus=($(wpctl status))
-id=-1
-
-# Main output search
-i=-1
-while (( i < ${#wpstatus[@]} )); do
-	i=$((i+1))
-	if grep -qi Audio <<< ${wpstatus[$i]}; then
-		break
-	fi
-done
-
-while (( i < ${#wpstatus[@]} )); do
-	i=$((i+1))
-	if grep -qi Sinks <<< ${wpstatus[$i]}; then
-		break
-	fi
-done
-
-i=$((i+1))
-
-if grep -qi '[0-9]*\.' <<< ${wpstatus[$i]}; then
-	# HERE WE GO
-	id=$( grep -o '[0-9]*\. [A-Z]' <<< ${wpstatus[$i]} | grep -o '[0-9]*')
-	echo $id
-else
-	echo No device
-	exit 1
-fi
-
-if (( $id == -1 )); then
-	echo Error
-	exit 1
-fi
 
 while getopts 'udm' OPTION; do
   case "$OPTION" in
     u)
-	  wpctl set-volume $id 10%+
-      notify_volume $id
+	  wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+      notify_volume @DEFAULT_AUDIO_SINK@
       ;;
     d)
-	  wpctl set-volume $id 10%-
-      notify_volume $id
+	  wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+      notify_volume @DEFAULT_AUDIO_SINK@
       ;;
     m)
-      notify_volume $id
+	  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      notify_volume @DEFAULT_AUDIO_SINK@
       ;;
     ?)
       exit 1
@@ -75,6 +41,4 @@ shift "$(($OPTIND -1))"
 ####		echo "NO DEVICE"
 ####		exit 1
 ####	fi
-
-
 
