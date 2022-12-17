@@ -5,7 +5,8 @@ dotfiles=("$HOME/.Xresources"
 	  "$HOME/.zshrc"
 	  "$HOME/.config/neofetch/config.conf"
 	  "$HOME/.local/bin"
-      "$HOME/.vimrc")
+      "$HOME/.vimrc"
+      "/home/unlock.sh")
 
 for file in "${dotfiles[@]}"; do
 	rsync -av $file ./
