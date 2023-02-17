@@ -6,6 +6,7 @@ dotfiles=("$HOME/.Xresources"
 	  "$HOME/.config/neofetch/config.conf"
 	  "$HOME/.local/bin"
       "$HOME/.vimrc"
+      "$HOME/.tmux.conf"
       "/home/unlock.sh")
 
 for file in "${dotfiles[@]}"; do

@@ -29,4 +29,6 @@ slstatus &
 # Load xresources file
 xrdb ~/.Xresources
 
-exec dwm
+while :; do
+	ssh-agent dwm
+done
